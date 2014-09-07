@@ -7,19 +7,16 @@
 //
 
 import UIKit
+import QuartzCore
 
 class ViewController: UIViewController {
-                            
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    var resizableView = ResizableView(frame: CGRectMake(60, 100, 200, 200))
+    resizableView.backgroundColor = UIColor.purpleColor()
+    resizableView.transform = CGAffineTransformMakeRotation(0.3)
+    resizableView.center = CGPointMake(160, 200)
+    self.view.addSubview(resizableView)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
-
 }
 
