@@ -13,8 +13,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     let resizableView = ResizableView(frame: CGRect(x: 60, y: 100, width: 200, height: 200))
-    resizableView.backgroundColor = UIColor.purple
-    resizableView.transform = CGAffineTransform(rotationAngle: 0.3)
+    resizableView.backgroundColor = UIColor.lightGray
     resizableView.center = CGPoint(x: 160, y: 200)
     self.view.addSubview(resizableView)
   }
