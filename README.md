@@ -5,3 +5,7 @@ Dragging on the corner handles will resize the view from from the opposite corne
 Dragging on the rotate handle will adjust the CGAffineTransform rotation value of the view.
 
 Dragging on the middle of the view will adjust the view's center position.
+
+
+<img src="https://raw.githubusercontent.com/AdilSoomro/Resizable/master/Sample.png" width="320">
+
