@@ -15,7 +15,8 @@ class ResizableView: UIView {
   var bottomLeft:DragHandle!
   var bottomRight:DragHandle!
   var rotateHandle:DragHandle!
-  var previousLocation = CGPointZero
+    var borderView:ResizeBorder!
+  var previousLocation = CGPoint.zero
   var rotateLine = CAShapeLayer()
 
   
@@ -32,6 +33,10 @@ class ResizableView: UIView {
     
     rotateLine.opacity = 0.0
     rotateLine.lineDashPattern = [3,2]
+    
+    borderView = ResizeBorder(frame:self.bounds)
+    borderView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    self.addSubview(borderView)
     
     superview?.addSubview(topLeft)
     superview?.addSubview(topRight)
@@ -63,6 +68,9 @@ class ResizableView: UIView {
     bottomLeft.center = self.transformedBottomLeft()
     bottomRight.center = self.transformedBottomRight()
     rotateHandle.center = self.transformedRotateHandle()
+    
+    borderView.bounds = self.bounds
+    borderView.setNeedsDisplay()
   }
 
   //MARK: - Gesture Methods
