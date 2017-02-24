@@ -12,10 +12,10 @@ import QuartzCore
 class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    var resizableView = ResizableView(frame: CGRectMake(60, 100, 200, 200))
-    resizableView.backgroundColor = UIColor.purpleColor()
-    resizableView.transform = CGAffineTransformMakeRotation(0.3)
-    resizableView.center = CGPointMake(160, 200)
+    let resizableView = ResizableView(frame: CGRect(x: 60, y: 100, width: 200, height: 200))
+    resizableView.backgroundColor = UIColor.purple
+    resizableView.transform = CGAffineTransform(rotationAngle: 0.3)
+    resizableView.center = CGPoint(x: 160, y: 200)
     self.view.addSubview(resizableView)
   }
 }

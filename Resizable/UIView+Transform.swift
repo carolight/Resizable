@@ -15,24 +15,24 @@ import UIKit
 
 extension UIView {
   
-  func offsetPointToParentCoordinates(point: CGPoint) -> CGPoint {
-    return CGPointMake(point.x + self.center.x, point.y + self.center.y)
+  func offsetPointToParentCoordinates(_ point: CGPoint) -> CGPoint {
+    return CGPoint(x: point.x + self.center.x, y: point.y + self.center.y)
   }
   
-  func pointInViewCenterTerms(point:CGPoint) -> CGPoint {
-    return CGPointMake(point.x - self.center.x, point.y - self.center.y)
+  func pointInViewCenterTerms(_ point:CGPoint) -> CGPoint {
+    return CGPoint(x: point.x - self.center.x, y: point.y - self.center.y)
   }
   
-  func pointInTransformedView(point: CGPoint) -> CGPoint {
+  func pointInTransformedView(_ point: CGPoint) -> CGPoint {
     let offsetItem = self.pointInViewCenterTerms(point)
-    let updatedItem = CGPointApplyAffineTransform(offsetItem, self.transform)
+    let updatedItem = offsetItem.applying(self.transform)
     let finalItem = self.offsetPointToParentCoordinates(updatedItem)
     return finalItem
   }
   
   func originalFrame() -> CGRect {
     let currentTransform = self.transform
-    self.transform = CGAffineTransformIdentity
+    self.transform = CGAffineTransform.identity
     let originalFrame = self.frame
     self.transform = currentTransform
     return originalFrame
@@ -77,12 +77,12 @@ extension UIView {
     return self.pointInTransformedView(point)
   }
   
-  func setAnchorPoint(anchorPoint:CGPoint) {
-    var newPoint = CGPointMake(self.bounds.size.width * anchorPoint.x, self.bounds.size.height * anchorPoint.y)
-    var oldPoint = CGPointMake(self.bounds.size.width * self.layer.anchorPoint.x, self.bounds.size.height * self.layer.anchorPoint.y)
+  func setAnchorPoint(_ anchorPoint:CGPoint) {
+    var newPoint = CGPoint(x: self.bounds.size.width * anchorPoint.x, y: self.bounds.size.height * anchorPoint.y)
+    var oldPoint = CGPoint(x: self.bounds.size.width * self.layer.anchorPoint.x, y: self.bounds.size.height * self.layer.anchorPoint.y)
     
-    newPoint = CGPointApplyAffineTransform(newPoint, self.transform)
-    oldPoint = CGPointApplyAffineTransform(oldPoint, self.transform)
+    newPoint = newPoint.applying(self.transform)
+    oldPoint = oldPoint.applying(self.transform)
     
     var position = self.layer.position
     position.x -= oldPoint.x
