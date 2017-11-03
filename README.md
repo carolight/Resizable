@@ -6,6 +6,6 @@ Dragging on the rotate handle will adjust the CGAffineTransform rotation value o
 
 Dragging on the middle of the view will adjust the view's center position.
 
-
+<kbd>
 <img src="https://raw.githubusercontent.com/AdilSoomro/Resizable/master/Sample.png" width="320">
-
+</kbd>
