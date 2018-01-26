@@ -12,8 +12,8 @@ import UIKit
 
 class DragHandle: UIView {
 
-  var fillColor = UIColor.darkGrayColor()
-  var strokeColor = UIColor.lightGrayColor()
+  var fillColor = UIColor.darkGray
+  var strokeColor = UIColor.lightGray
   var strokeWidth:CGFloat = 2.0
   
   required init(coder aDecoder: NSCoder) {
@@ -21,17 +21,17 @@ class DragHandle: UIView {
   }
   
   init(fillColor:UIColor, strokeColor:UIColor, strokeWidth width:CGFloat = 2.0) {
-    super.init(frame:CGRectMake(0, 0, diameter, diameter))
+    super.init(frame:CGRect(x: 0, y: 0, width: diameter, height: diameter))
     self.fillColor = fillColor
     self.strokeColor = strokeColor
     self.strokeWidth = width
-    self.backgroundColor = UIColor.clearColor()
+    self.backgroundColor = UIColor.clear
   }
   
-    override func drawRect(rect: CGRect)
+    override func draw(_ rect: CGRect)
     {
-      super.drawRect(rect)
-      var handlePath = UIBezierPath(ovalInRect: CGRectInset(rect, 10 + strokeWidth, 10 + strokeWidth))
+      super.draw(rect)
+      let handlePath = UIBezierPath(ovalIn: rect.insetBy(dx: 10 + strokeWidth, dy: 10 + strokeWidth))
       fillColor.setFill()
       handlePath.fill()
       strokeColor.setStroke()

@@ -15,6 +15,8 @@
 		82982CC919BAE60C00D257C1 /* ResizableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82982CC819BAE60C00D257C1 /* ResizableView.swift */; };
 		82982CCB19BB263100D257C1 /* UIView+Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82982CCA19BB263100D257C1 /* UIView+Transform.swift */; };
 		82982CCD19BBDAE400D257C1 /* DragHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82982CCC19BBDAE400D257C1 /* DragHandle.swift */; };
+		CBE5B5561E60B22300E7A142 /* ResizeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE5B5551E60B22300E7A142 /* ResizeBorder.swift */; };
+		CBE5B55A1E60B41200E7A142 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBE5B5591E60B41200E7A142 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		82982CC819BAE60C00D257C1 /* ResizableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizableView.swift; sourceTree = "<group>"; };
 		82982CCA19BB263100D257C1 /* UIView+Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Transform.swift"; sourceTree = "<group>"; };
 		82982CCC19BBDAE400D257C1 /* DragHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragHandle.swift; sourceTree = "<group>"; };
+		CBE5B5551E60B22300E7A142 /* ResizeBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeBorder.swift; sourceTree = "<group>"; };
+		CBE5B5591E60B41200E7A142 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +85,14 @@
 		82982CA819BAE5EA00D257C1 /* Resizable */ = {
 			isa = PBXGroup;
 			children = (
+				CBE5B5551E60B22300E7A142 /* ResizeBorder.swift */,
 				82982CAB19BAE5EA00D257C1 /* AppDelegate.swift */,
 				82982CAD19BAE5EA00D257C1 /* ViewController.swift */,
 				82982CC819BAE60C00D257C1 /* ResizableView.swift */,
 				82982CCC19BBDAE400D257C1 /* DragHandle.swift */,
 				82982CCA19BB263100D257C1 /* UIView+Transform.swift */,
 				82982CAF19BAE5EA00D257C1 /* Main.storyboard */,
+				CBE5B5591E60B41200E7A142 /* LaunchScreen.xib */,
 				82982CB219BAE5EA00D257C1 /* Images.xcassets */,
 				82982CA919BAE5EA00D257C1 /* Supporting Files */,
 			);
@@ -162,14 +168,16 @@
 		82982C9E19BAE5EA00D257C1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Caroline;
 				TargetAttributes = {
 					82982CA519BAE5EA00D257C1 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0820;
 					};
 					82982CB719BAE5EA00D257C1 = {
 						CreatedOnToolsVersion = 6.0;
+						LastSwiftMigration = 0820;
 						TestTargetID = 82982CA519BAE5EA00D257C1;
 					};
 				};
@@ -198,6 +206,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBE5B55A1E60B41200E7A142 /* LaunchScreen.xib in Resources */,
 				82982CB119BAE5EA00D257C1 /* Main.storyboard in Resources */,
 				82982CB319BAE5EA00D257C1 /* Images.xcassets in Resources */,
 			);
@@ -222,6 +231,7 @@
 				82982CAC19BAE5EA00D257C1 /* AppDelegate.swift in Sources */,
 				82982CC919BAE60C00D257C1 /* ResizableView.swift in Sources */,
 				82982CCB19BB263100D257C1 /* UIView+Transform.swift in Sources */,
+				CBE5B5561E60B22300E7A142 /* ResizeBorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,15 +278,19 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -310,8 +324,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -319,6 +335,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -328,6 +345,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -336,10 +354,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Resizable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caroline.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -347,10 +366,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Resizable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caroline.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -368,7 +388,9 @@
 				);
 				INFOPLIST_FILE = ResizableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caroline.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resizable.app/Resizable";
 			};
 			name = Debug;
@@ -383,7 +405,9 @@
 				);
 				INFOPLIST_FILE = ResizableTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.caroline.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resizable.app/Resizable";
 			};
 			name = Release;
@@ -407,6 +431,7 @@
 				82982CC419BAE5EA00D257C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		82982CC519BAE5EA00D257C1 /* Build configuration list for PBXNativeTarget "ResizableTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +440,7 @@
 				82982CC719BAE5EA00D257C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
